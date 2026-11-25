@@ -1,10 +1,1154 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 <head>
-    <title>Interior Designers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharvari Aher | Luxury Interior Architecture & Design</title>
+    <meta name="description" content="International luxury interior architecture, bespoke furniture design, and private residential curation based in London, Doha, and Dubai.">
+
+    <!-- Google Fonts: Cormorant Garamond & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#FAF8F5',
+                        stone: '#EBE6DE',
+                        champagne: '#B59A6B',
+                        'champagne-dark': '#9A8052',
+                        charcoal: '#1E1E1E',
+                        'charcoal-light': '#2C2C2C',
+                        muted: '#6E6A64'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'widest-xl': '0.25em',
+                        'widest-2xl': '0.35em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Subtle Refinements & Scroll Reveal Animations -->
+    <style>
+        /* Editorial Selection Styling */
+        ::selection {
+            background-color: #B59A6B;
+            color: #FAF8F5;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF8F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D5CEC2;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B59A6B;
+        }
+
+        /* Scroll Reveal Utility */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Atmosphere Transitions */
+        .hero-bg-layer {
+            transition: opacity 1.1s ease-in-out, transform 8s ease-out;
+        }
+
+        /* Delicate Underline Hover Animation */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 50%;
+            background-color: #B59A6B;
+            transition: width 0.35s ease, left 0.35s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Image Card Zoom */
+        .portfolio-img {
+            transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .portfolio-card:hover .portfolio-img {
+            transform: scale(1.045);
+        }
+    </style>
 </head>
-<body>
-    <h1>Welcome to Interior Designers</h1>
-    <p>My website is live on GitHub Pages.</p>
+<body class="bg-ivory text-charcoal font-sans antialiased overflow-x-hidden">
+
+    <!-- =====================================================================
+         1. STICKY MINIMAL NAVIGATION HEADER
+    ====================================================================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-500 py-6 px-6 md:px-12 lg:px-20 text-ivory">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            
+            <!-- Left Navigation Links (Desktop) -->
+            <nav class="hidden lg:flex items-center space-x-10 text-xs uppercase tracking-widest-xl font-light">
+                <a href="#portfolio" class="nav-link transition-colors hover:text-champagne">Portfolio</a>
+                <a href="#studio" class="nav-link transition-colors hover:text-champagne">Studio</a>
+                <a href="#services" class="nav-link transition-colors hover:text-champagne">Services</a>
+            </nav>
+
+            <!-- Brand Monogram & Wordmark -->
+            <a href="#" class="flex flex-col items-center group focus:outline-none">
+                <div class="w-9 h-9 border border-champagne/80 rounded-full flex items-center justify-center mb-1.5 transition-transform duration-500 group-hover:scale-105">
+                    <span class="font-serif text-base tracking-widest text-champagne font-medium">AS</span>
+                </div>
+                <span class="font-serif text-lg md:text-xl tracking-widest-2xl uppercase font-normal">Aurelia Sterling</span>
+                <span class="text-[9px] uppercase tracking-widest-xl opacity-75 mt-0.5">London &bull; Doha &bull; Dubai</span>
+            </a>
+
+            <!-- Right Navigation Links (Desktop) -->
+            <nav class="hidden lg:flex items-center space-x-10 text-xs uppercase tracking-widest-xl font-light">
+                <a href="#press" class="nav-link transition-colors hover:text-champagne">Press</a>
+                <a href="#inquire" class="nav-link transition-colors hover:text-champagne">Inquire</a>
+                <a href="#inquire" class="border border-champagne/80 px-5 py-2.5 text-[11px] uppercase tracking-widest-xl hover:bg-champagne hover:text-ivory transition-all duration-300 rounded-sm">
+                    Private Consultation
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="lg:hidden p-2 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 7h16M4 12h16M10 17h10" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 bg-charcoal text-ivory transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-between p-8 md:p-12">
+        <div class="flex items-center justify-between">
+            <span class="font-serif text-lg tracking-widest-2xl uppercase text-champagne">Aurelia Sterling</span>
+            <button id="close-drawer-btn" aria-label="Close Navigation Menu" class="p-2 text-ivory hover:text-champagne transition-colors">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <nav class="flex flex-col space-y-7 text-center font-serif text-3xl font-light">
+            <a href="#portfolio" class="mobile-link hover:text-champagne transition-colors">Selected Portfolio</a>
+            <a href="#studio" class="mobile-link hover:text-champagne transition-colors">The Studio &amp; Philosophy</a>
+            <a href="#services" class="mobile-link hover:text-champagne transition-colors">Bespoke Services</a>
+            <a href="#press" class="mobile-link hover:text-champagne transition-colors">Press &amp; Accolades</a>
+            <a href="#inquire" class="mobile-link hover:text-champagne transition-colors">Private Consultation</a>
+        </nav>
+
+        <div class="border-t border-ivory/15 pt-6 text-center text-xs tracking-widest-xl uppercase text-ivory/60">
+            <p>Walton Street, Knightsbridge, London</p>
+            <p class="mt-2 text-champagne">+44 (0) 20 7946 0821</p>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         2. FULL-BLEED HERO SECTION WITH ATMOSPHERE TOGGLE
+    ====================================================================== -->
+    <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-charcoal">
+        
+        <!-- Atmosphere Layer 1: Daylight Architectural Salon -->
+        <div id="hero-day" class="hero-bg-layer absolute inset-0 opacity-100 scale-100"
+             style="background: linear-gradient(135deg, #2b2620 0%, #1c1916 100%);">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=85"
+                 alt="Sunlit classical luxury residence salon with limestone arches"
+                 class="w-full h-full object-cover object-center opacity-75"
+                 onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-b from-charcoal/65 via-charcoal/35 to-charcoal/75"></div>
+        </div>
+
+        <!-- Atmosphere Layer 2: Evening Candlelit Sanctuary -->
+        <div id="hero-evening" class="hero-bg-layer absolute inset-0 opacity-0 scale-105"
+             style="background: linear-gradient(135deg, #1b1714 0%, #110f0d 100%);">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85"
+                 alt="Evening warm ambient architectural interior with bespoke lighting"
+                 class="w-full h-full object-cover object-center opacity-70"
+                 onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-b from-charcoal/75 via-charcoal/45 to-charcoal/85"></div>
+        </div>
+
+        <!-- Hero Foreground Content -->
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-ivory mt-12">
+            <!-- Delicate Gold Divider -->
+            <div class="flex items-center justify-center space-x-4 mb-6">
+                <span class="h-px w-10 md:w-16 bg-champagne/80"></span>
+                <span class="text-[11px] md:text-xs uppercase tracking-widest-2xl text-champagne font-normal">
+                    Architectural Serenity &amp; Craft
+                </span>
+                <span class="h-px w-10 md:w-16 bg-champagne/80"></span>
+            </div>
+
+            <!-- Bold Editorial Serif Headline -->
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-[1.12] tracking-wide mb-7">
+                Timeless Spaces Crafted <br class="hidden sm:inline" />
+                <span class="italic font-normal text-stone">for Extraordinary Lives</span>
+            </h1>
+
+            <p class="max-w-xl mx-auto text-sm md:text-base font-light text-ivory/85 leading-relaxed mb-10">
+                Creating harmonious private residences, historic townhouses, and bespoke furnishings across London, the Alps, and the Middle East.
+            </p>
+
+            <!-- Primary CTA & Atmosphere Switcher -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="#portfolio" class="w-full sm:w-auto px-9 py-4 bg-champagne text-ivory text-xs uppercase tracking-widest-xl font-normal hover:bg-champagne-dark transition-all duration-300 rounded-sm shadow-lg">
+                    Explore Portfolio
+                </a>
+
+                <!-- Interactive Mood / Atmosphere Toggle -->
+                <div class="inline-flex items-center bg-charcoal/60 backdrop-blur-md border border-ivory/25 rounded-sm p-1">
+                    <button id="btn-day" onclick="setAtmosphere('day')" class="px-4 py-2 text-[11px] uppercase tracking-widest transition-all duration-300 bg-ivory text-charcoal font-medium rounded-sm">
+                        Daylight
+                    </button>
+                    <button id="btn-evening" onclick="setAtmosphere('evening')" class="px-4 py-2 text-[11px] uppercase tracking-widest transition-all duration-300 text-ivory/80 hover:text-ivory rounded-sm">
+                        Evening Glow
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subtle Scroll Indicator -->
+        <a href="#portfolio" aria-label="Scroll to Portfolio" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-ivory/70 hover:text-champagne transition-colors group">
+            <span class="text-[10px] uppercase tracking-widest-xl mb-2">Discover</span>
+            <span class="w-px h-10 bg-gradient-to-b from-champagne to-transparent block group-hover:h-12 transition-all duration-300"></span>
+        </a>
+    </section>
+
+    <!-- =====================================================================
+         3. FILTERABLE PORTFOLIO GALLERY ("SELECTED WORKS")
+    ====================================================================== -->
+    <section id="portfolio" class="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-ivory">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-xs uppercase tracking-widest-2xl text-champagne block mb-3">Curated Commissions</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-light text-charcoal mb-5">Selected Works</h2>
+                <div class="w-16 h-px bg-champagne mx-auto mb-6"></div>
+                <p class="text-sm font-light text-muted leading-relaxed">
+                    Each commission begins with respect for architectural provenance, natural light, and the tactile beauty of rare, enduring materials.
+                </p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-3 md:gap-8 mb-16 reveal" id="portfolio-filters">
+                <button data-filter="all" class="filter-btn active text-xs uppercase tracking-widest-xl pb-2 border-b border-champagne text-charcoal font-medium transition-all">
+                    All Works
+                </button>
+                <button data-filter="London Townhouses" class="filter-btn text-xs uppercase tracking-widest-xl pb-2 border-b border-transparent text-muted hover:text-charcoal transition-all">
+                    London Townhouses
+                </button>
+                <button data-filter="Alpine Chalets" class="filter-btn text-xs uppercase tracking-widest-xl pb-2 border-b border-transparent text-muted hover:text-charcoal transition-all">
+                    Alpine Chalets
+                </button>
+                <button data-filter="Coastal Villas" class="filter-btn text-xs uppercase tracking-widest-xl pb-2 border-b border-transparent text-muted hover:text-charcoal transition-all">
+                    Coastal Villas
+                </button>
+                <button data-filter="Bespoke Furnishings" class="filter-btn text-xs uppercase tracking-widest-xl pb-2 border-b border-transparent text-muted hover:text-charcoal transition-all">
+                    Bespoke Furnishings
+                </button>
+            </div>
+
+            <!-- Asymmetric Editorial Grid -->
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-12 gap-y-14 md:gap-x-10 lg:gap-x-14 items-start">
+                <!-- Cards are dynamically rendered via JavaScript for crisp filtering & modal linking -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         4. EDITORIAL STUDIO & PHILOSOPHY SECTION ("THE STUDIO")
+    ====================================================================== -->
+    <section id="studio" class="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-stone/60 border-y border-stone">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left Column: Layered Editorial Imagery -->
+            <div class="lg:col-span-6 relative reveal">
+                <div class="aspect-[4/5] w-full overflow-hidden rounded-sm bg-stone shadow-md">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85"
+                         alt="Aurelia Sterling London Design Atelier Material Library"
+                         class="w-full h-full object-cover"
+                         onerror="this.src='https://placehold.co/800x1000/EBE6DE/1E1E1E?text=London+Design+Atelier'">
+                </div>
+                <!-- Overlapping Accent Frame -->
+                <div class="hidden sm:block absolute -bottom-8 -right-6 w-56 bg-ivory p-6 shadow-xl border border-stone rounded-sm">
+                    <p class="font-serif italic text-lg text-charcoal leading-snug">
+                        “True luxury whispers through proportion, provenance, and the patina of human touch.”
+                    </p>
+                    <span class="block mt-3 text-[10px] uppercase tracking-widest-xl text-champagne">
+                        Aurelia Sterling, Founder
+                    </span>
+                </div>
+            </div>
+
+            <!-- Right Column: Studio Manifesto & Architectural Metrics -->
+            <div class="lg:col-span-6 lg:pl-6 reveal">
+                <span class="text-xs uppercase tracking-widest-2xl text-champagne block mb-3">The Studio &amp; Philosophy</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-light text-charcoal leading-tight mb-6">
+                    Bridging Classical Heritage <br />with Contemporary Poise
+                </h2>
+                <div class="w-14 h-px bg-champagne mb-8"></div>
+
+                <div class="space-y-5 text-sm md:text-[15px] font-light text-charcoal/85 leading-relaxed">
+                    <p>
+                        Founded in Knightsbridge over two decades ago, Aurelia Sterling is an internationally acclaimed interior architecture and design practice celebrated for crafting deeply personal, collectible residences.
+                    </p>
+                    <p>
+                        Rejecting transient trends, our multidisciplinary team of architects, interior designers, and master artisans collaborates with European stone quarries, Venetian glassblowers, and British cabinetmakers to realize spaces of enduring warmth and quiet grandeur.
+                    </p>
+                </div>
+
+                <!-- Mobile Signature Callout Quote -->
+                <blockquote class="sm:hidden my-8 pl-5 border-l-2 border-champagne font-serif italic text-xl text-charcoal">
+                    “True luxury whispers through proportion, provenance, and the patina of human touch.”
+                </blockquote>
+
+                <!-- Key Architectural Metrics -->
+                <div class="grid grid-cols-3 gap-6 border-t border-charcoal/15 pt-8 mt-10">
+                    <div>
+                        <span class="font-serif text-3xl md:text-4xl text-champagne font-normal block">22+</span>
+                        <span class="text-[11px] uppercase tracking-widest text-muted mt-1 block">Years of Craft</span>
+                    </div>
+                    <div>
+                        <span class="font-serif text-3xl md:text-4xl text-champagne font-normal block">140</span>
+                        <span class="text-[11px] uppercase tracking-widest text-muted mt-1 block">Global Residences</span>
+                    </div>
+                    <div>
+                        <span class="font-serif text-3xl md:text-4xl text-champagne font-normal block">18</span>
+                        <span class="text-[11px] uppercase tracking-widest text-muted mt-1 block">Countries Served</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. BESPOKE SERVICES & CRAFTSMANSHIP (INTERACTIVE TABS)
+    ====================================================================== -->
+    <section id="services" class="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-ivory">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
+                <div>
+                    <span class="text-xs uppercase tracking-widest-2xl text-champagne block mb-3">Disciplines</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-light text-charcoal">Bespoke Services</h2>
+                </div>
+                <p class="text-sm font-light text-muted max-w-md mt-4 md:mt-0 leading-relaxed">
+                    From structural spatial reconfiguration to the final placement of museum-grade art, we offer seamless end-to-end stewardship.
+                </p>
+            </div>
+
+            <!-- Interactive Service Tabs Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start reveal">
+                
+                <!-- Left Tab Navigation -->
+                <div class="lg:col-span-5 flex flex-col border-t border-charcoal/15" id="service-tabs">
+                    <button onclick="selectService(0)" class="service-tab active text-left py-6 px-4 border-b border-charcoal/15 flex items-center justify-between transition-all bg-stone/50">
+                        <div>
+                            <span class="text-[11px] font-mono text-champagne mr-3">01</span>
+                            <span class="font-serif text-2xl text-charcoal">Interior Architecture</span>
+                        </div>
+                        <span class="text-champagne text-lg">&rarr;</span>
+                    </button>
+
+                    <button onclick="selectService(1)" class="service-tab text-left py-6 px-4 border-b border-charcoal/15 flex items-center justify-between transition-all hover:bg-stone/30">
+                        <div>
+                            <span class="text-[11px] font-mono text-champagne mr-3">02</span>
+                            <span class="font-serif text-2xl text-charcoal">Bespoke Furniture &amp; Artisans</span>
+                        </div>
+                        <span class="text-muted text-lg">&rarr;</span>
+                    </button>
+
+                    <button onclick="selectService(2)" class="service-tab text-left py-6 px-4 border-b border-charcoal/15 flex items-center justify-between transition-all hover:bg-stone/30">
+                        <div>
+                            <span class="text-[11px] font-mono text-champagne mr-3">03</span>
+                            <span class="font-serif text-2xl text-charcoal">Art Curation &amp; Styling</span>
+                        </div>
+                        <span class="text-muted text-lg">&rarr;</span>
+                    </button>
+
+                    <button onclick="selectService(3)" class="service-tab text-left py-6 px-4 border-b border-charcoal/15 flex items-center justify-between transition-all hover:bg-stone/30">
+                        <div>
+                            <span class="text-[11px] font-mono text-champagne mr-3">04</span>
+                            <span class="font-serif text-2xl text-charcoal">Turnkey Project Management</span>
+                        </div>
+                        <span class="text-muted text-lg">&rarr;</span>
+                    </button>
+                </div>
+
+                <!-- Right Tab Content Panel -->
+                <div class="lg:col-span-7 bg-stone/40 border border-stone p-6 sm:p-10 rounded-sm">
+                    <div id="service-display" class="transition-opacity duration-500">
+                        <div class="aspect-[16/9] w-full overflow-hidden rounded-sm mb-8 bg-stone">
+                            <img id="service-img"
+                                 src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85"
+                                 alt="Interior Architecture Craftsmanship"
+                                 class="w-full h-full object-cover transition-all duration-700"
+                                 onerror="this.src='https://placehold.co/1200x675/EBE6DE/1E1E1E?text=Interior+Architecture'">
+                        </div>
+                        <div class="flex items-center space-x-3 mb-3">
+                            <span id="service-tag" class="text-[11px] uppercase tracking-widest-xl text-champagne">Spatial Masterplanning</span>
+                        </div>
+                        <h3 id="service-title" class="font-serif text-3xl text-charcoal font-normal mb-4">Interior Architecture</h3>
+                        <p id="service-desc" class="text-sm font-light text-charcoal/85 leading-relaxed mb-6">
+                            We reimagine floorplans, sightlines, classical mouldings, and bespoke lighting choreography. Working alongside heritage conservation officers and structural engineers, we elevate historic listed buildings and contemporary penthouses alike.
+                        </p>
+                        <ul id="service-deliverables" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-muted border-t border-charcoal/10 pt-5">
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-champagne mr-2.5"></span>Listed Building &amp; Heritage Restoration</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-champagne mr-2.5"></span>Custom Stone &amp; Joinery Detailing</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-champagne mr-2.5"></span>Architectural Lighting Design</li>
+                            <li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-champagne mr-2.5"></span>Acoustic &amp; Wellness Integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         6. PRESS & ACCOLADES STRIP (INTERACTIVE QUOTE SWITCHER)
+    ====================================================================== -->
+    <section id="press" class="py-20 md:py-28 px-6 md:px-12 bg-charcoal text-ivory">
+        <div class="max-w-5xl mx-auto text-center reveal">
+            <span class="text-[11px] uppercase tracking-widest-2xl text-champagne block mb-8">Editorial Recognition</span>
+
+            <!-- Interactive Quote Display -->
+            <div class="min-h-[140px] flex flex-col items-center justify-center mb-12">
+                <blockquote id="press-quote" class="font-serif italic text-2xl sm:text-3xl md:text-4xl font-light text-ivory/95 leading-relaxed max-w-3xl transition-opacity duration-500">
+                    “Aurelia Sterling possesses an uncanny ability to infuse grand architectural volumes with intimate, soul-stirring warmth.”
+                </blockquote>
+                <cite id="press-citation" class="not-italic text-xs uppercase tracking-widest-xl text-champagne mt-5 block">
+                    — Architectural Digest, AD100 Global Edition
+                </cite>
+            </div>
+
+            <!-- Prestigious Publication Selectors -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-ivory/15">
+                <button onclick="selectPress(0)" class="press-btn active font-serif text-xl md:text-2xl tracking-wider text-ivory transition-opacity opacity-100 hover:opacity-100">
+                    ARCHITECTURAL DIGEST
+                </button>
+                <button onclick="selectPress(1)" class="press-btn font-serif text-xl md:text-2xl tracking-wider text-ivory transition-opacity opacity-45 hover:opacity-90">
+                    HOUSE &amp; GARDEN
+                </button>
+                <button onclick="selectPress(2)" class="press-btn font-serif text-xl md:text-2xl tracking-wider text-ivory transition-opacity opacity-45 hover:opacity-90">
+                    ELLE DECOR
+                </button>
+                <button onclick="selectPress(3)" class="press-btn font-serif text-xl md:text-2xl tracking-wider text-ivory transition-opacity opacity-45 hover:opacity-90">
+                    Robb Report
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         7. PRIVATE CONSULTATION / INQUIRY SECTION
+    ====================================================================== -->
+    <section id="inquire" class="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-ivory">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            
+            <!-- Left Column: Studio Invitation -->
+            <div class="lg:col-span-5 reveal">
+                <span class="text-xs uppercase tracking-widest-2xl text-champagne block mb-3">Commissions &amp; Inquiries</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-light text-charcoal leading-tight mb-6">
+                    Begin a Private <br />Conversation
+                </h2>
+                <div class="w-14 h-px bg-champagne mb-7"></div>
+                <p class="text-sm font-light text-muted leading-relaxed mb-8">
+                    We accept a select number of residential, hospitality, and yacht commissions each year to ensure the personal involvement of our founding principals.
+                </p>
+
+                <div class="space-y-6 text-sm font-light text-charcoal/85 border-t border-stone pt-8">
+                    <div>
+                        <span class="text-[11px] uppercase tracking-widest-xl text-champagne block mb-1">London Flagship Atelier</span>
+                        <p>142 Walton Street, Knightsbridge, London SW3 2JJ</p>
+                    </div>
+                    <div>
+                        <span class="text-[11px] uppercase tracking-widest-xl text-champagne block mb-1">Direct Appointments</span>
+                        <p>commissions@aureliasterling.com &bull; +44 (0) 20 7946 0821</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Interactive Consultation Form -->
+            <div class="lg:col-span-7 bg-stone/45 border border-stone p-8 sm:p-12 rounded-sm reveal">
+                <form id="inquiry-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="client-name" class="block text-[11px] uppercase tracking-widest-xl text-charcoal mb-2">Full Name *</label>
+                            <input type="text" id="client-name" required placeholder="Lady Eleanor Vance"
+                                   class="w-full bg-ivory border border-charcoal/20 px-4 py-3 text-sm font-light text-charcoal focus:outline-none focus:border-champagne transition-colors rounded-sm">
+                        </div>
+                        <div>
+                            <label for="client-email" class="block text-[11px] uppercase tracking-widest-xl text-charcoal mb-2">Email Address *</label>
+                            <input type="email" id="client-email" required placeholder="eleanor@privateoffice.co.uk"
+                                   class="w-full bg-ivory border border-charcoal/20 px-4 py-3 text-sm font-light text-charcoal focus:outline-none focus:border-champagne transition-colors rounded-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="project-location" class="block text-[11px] uppercase tracking-widest-xl text-charcoal mb-2">Project Location *</label>
+                            <input type="text" id="project-location" required placeholder="Belgravia, London / Gstaad"
+                                   class="w-full bg-ivory border border-charcoal/20 px-4 py-3 text-sm font-light text-charcoal focus:outline-none focus:border-champagne transition-colors rounded-sm">
+                        </div>
+                        <div>
+                            <label for="project-scope" class="block text-[11px] uppercase tracking-widest-xl text-charcoal mb-2">Commission Scope</label>
+                            <select id="project-scope"
+                                    class="w-full bg-ivory border border-charcoal/20 px-4 py-3 text-sm font-light text-charcoal focus:outline-none focus:border-champagne transition-colors rounded-sm">
+                                <option value="Full Interior Architecture & Design">Full Interior Architecture &amp; Design</option>
+                                <option value="Private Residence Turnkey">Private Residence Turnkey</option>
+                                <option value="Bespoke Furniture & Art Curation">Bespoke Furniture &amp; Art Curation</option>
+                                <option value="Yacht or Private Aviation">Superyacht or Private Aviation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="project-message" class="block text-[11px] uppercase tracking-widest-xl text-charcoal mb-2">Project Brief &amp; Timeline</label>
+                        <textarea id="project-message" rows="4" placeholder="Please share details regarding property scale, architectural period, and anticipated commencement..."
+                                  class="w-full bg-ivory border border-charcoal/20 px-4 py-3 text-sm font-light text-charcoal focus:outline-none focus:border-champagne transition-colors rounded-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-charcoal text-ivory text-xs uppercase tracking-widest-xl hover:bg-champagne transition-colors duration-300 rounded-sm">
+                        Request Private Consultation
+                    </button>
+                </form>
+
+                <!-- Immediate Elegant Confirmation State -->
+                <div id="inquiry-confirmation" class="hidden text-center py-10">
+                    <div class="w-12 h-12 rounded-full border border-champagne text-champagne flex items-center justify-center mx-auto mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-3xl text-charcoal mb-3">Thank You, <span id="confirmed-name">Client</span></h3>
+                    <p class="text-sm font-light text-muted max-w-md mx-auto leading-relaxed mb-6">
+                        Your private inquiry for <span id="confirmed-location" class="text-charcoal font-normal">your residence</span> has been received by our Senior Client Director in Knightsbridge. We will respond in strict confidence within 24 hours.
+                    </p>
+                    <button onclick="resetInquiryForm()" class="text-xs uppercase tracking-widest-xl text-champagne border-b border-champagne pb-1 hover:text-charcoal hover:border-charcoal transition-colors">
+                        Submit Another Inquiry
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         8. REFINED DARK CHARCOAL FOOTER
+    ====================================================================== -->
+    <footer class="bg-charcoal text-ivory pt-20 pb-12 px-6 md:px-12 lg:px-20 border-t border-ivory/10">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Top Row: Brand & Studio Addresses -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-ivory/15">
+                
+                <!-- Brand & Newsletter -->
+                <div class="lg:col-span-5">
+                    <div class="flex items-center space-x-3 mb-5">
+                        <div class="w-8 h-8 border border-champagne rounded-full flex items-center justify-center">
+                            <span class="font-serif text-sm text-champagne">AS</span>
+                        </div>
+                        <span class="font-serif text-xl tracking-widest-2xl uppercase">Aurelia Sterling</span>
+                    </div>
+                    <p class="text-xs font-light text-ivory/65 leading-relaxed max-w-sm mb-6">
+                        Receive our bi-annual journal featuring private monographs, artisan studio visits, and seasonal design essays.
+                    </p>
+
+                    <form id="newsletter-form" class="flex max-w-sm">
+                        <input type="email" id="newsletter-email" required placeholder="Enter your email address"
+                               class="w-full bg-charcoal-light border border-ivory/20 px-4 py-3 text-xs font-light text-ivory placeholder-ivory/40 focus:outline-none focus:border-champagne rounded-l-sm">
+                        <button type="submit" class="px-5 py-3 bg-champagne text-ivory text-[11px] uppercase tracking-widest hover:bg-champagne-dark transition-colors rounded-r-sm whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p id="newsletter-feedback" class="hidden text-xs text-champagne mt-2.5 font-light">
+                        Thank you. You have been added to The Aurelia Sterling Monograph list.
+                    </p>
+                </div>
+
+                <!-- International Studios -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-[11px] uppercase tracking-widest-xl text-champagne mb-3">London</h4>
+                        <p class="text-xs font-light text-ivory/70 leading-relaxed">
+                            142 Walton Street<br />
+                            Knightsbridge, London<br />
+                            SW3 2JJ, United Kingdom<br />
+                            <span class="block mt-2 text-ivory/90">+44 (0) 20 7946 0821</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-[11px] uppercase tracking-widest-xl text-champagne mb-3">Doha</h4>
+                        <p class="text-xs font-light text-ivory/70 leading-relaxed">
+                            Msheireb Downtown<br />
+                            Al Khail Street, Suite 402<br />
+                            Doha, Qatar<br />
+                            <span class="block mt-2 text-ivory/90">+974 4400 8912</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-[11px] uppercase tracking-widest-xl text-champagne mb-3">Dubai</h4>
+                        <p class="text-xs font-light text-ivory/70 leading-relaxed">
+                            DIFC Gate Village<br />
+                            Building 08, Level 3<br />
+                            Dubai, UAE<br />
+                            <span class="block mt-2 text-ivory/90">+971 4 509 3410</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Copyright & Social Links -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ivory/50 tracking-wider">
+                <p>&copy; 2026 Aurelia Sterling Design Ltd. All Rights Reserved.</p>
+                <div class="flex items-center space-x-6 mt-4 sm:mt-0 uppercase tracking-widest">
+                    <a href="#" class="hover:text-champagne transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-champagne transition-colors">Pinterest</a>
+                    <a href="#" class="hover:text-champagne transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-champagne transition-colors">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         PROJECT DETAIL MODAL (INTERACTIVE LIGHTBOX & SPECIFICATIONS)
+    ====================================================================== -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-charcoal/85 backdrop-blur-sm p-4 sm:p-6 md:p-10 overflow-y-auto">
+        <div class="relative bg-ivory text-charcoal w-full max-w-5xl rounded-sm shadow-2xl overflow-hidden my-auto border border-stone">
+            
+            <!-- Close Modal Button -->
+            <button onclick="closeProjectModal()" aria-label="Close Project Details"
+                    class="absolute top-4 right-4 z-20 w-10 h-10 bg-ivory/90 hover:bg-champagne text-charcoal hover:text-ivory rounded-full flex items-center justify-center transition-colors shadow">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+                <!-- Left: Gallery Viewer -->
+                <div class="lg:col-span-7 bg-stone p-4 sm:p-6 flex flex-col justify-between">
+                    <div class="aspect-[4/3] w-full overflow-hidden rounded-sm bg-charcoal/10 mb-4">
+                        <img id="modal-main-img" src="" alt="Project Detail View" class="w-full h-full object-cover transition-opacity duration-300">
+                    </div>
+                    <!-- Thumbnail Switcher -->
+                    <div id="modal-thumbnails" class="grid grid-cols-3 gap-3">
+                        <!-- Injected dynamically -->
+                    </div>
+                </div>
+
+                <!-- Right: Project Specifications & Narrative -->
+                <div class="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between">
+                    <div>
+                        <span id="modal-category" class="text-[11px] uppercase tracking-widest-2xl text-champagne block mb-2">Category</span>
+                        <h3 id="modal-title" class="font-serif text-3xl sm:text-4xl font-light text-charcoal mb-4">Project Title</h3>
+                        <div class="w-12 h-px bg-champagne mb-6"></div>
+
+                        <p id="modal-narrative" class="text-sm font-light text-charcoal/85 leading-relaxed mb-8">
+                            Project design narrative goes here.
+                        </p>
+
+                        <!-- Specifications Table -->
+                        <dl class="space-y-3 border-t border-stone pt-5 text-xs">
+                            <div class="flex justify-between">
+                                <dt class="uppercase tracking-widest text-muted">Location</dt>
+                                <dd id="modal-location" class="font-normal text-charcoal">London, UK</dd>
+                            </div>
+                            <div class="flex justify-between border-t border-stone/60 pt-2.5">
+                                <dt class="uppercase tracking-widest text-muted">Scope</dt>
+                                <dd id="modal-scope" class="font-normal text-charcoal text-right">Full Architecture &amp; Interiors</dd>
+                            </div>
+                            <div class="flex justify-between border-t border-stone/60 pt-2.5">
+                                <dt class="uppercase tracking-widest text-muted">Key Materials</dt>
+                                <dd id="modal-materials" class="font-normal text-charcoal text-right max-w-[200px]">Calacatta Viola, Brushed Bronze</dd>
+                            </div>
+                            <div class="flex justify-between border-t border-stone/60 pt-2.5">
+                                <dt class="uppercase tracking-widest text-muted">Completion</dt>
+                                <dd id="modal-year" class="font-normal text-charcoal">2025</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-stone">
+                        <a href="#inquire" onclick="closeProjectModal()" class="block w-full text-center py-3.5 bg-charcoal text-ivory text-xs uppercase tracking-widest-xl hover:bg-champagne transition-colors rounded-sm">
+                            Inquire About Similar Commissions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         JAVASCRIPT INTERACTIVITY & DATA
+    ====================================================================== -->
+    <script>
+        // ---------------------------------------------------------------------
+        // 1. CURATED PORTFOLIO DATA
+        // ---------------------------------------------------------------------
+        const projects = [
+            {
+                id: 'belgravia-townhouse',
+                title: 'Eaton Square Grade II Residence',
+                category: 'London Townhouses',
+                location: 'Belgravia, London',
+                scope: 'Interior Architecture, Heritage Restoration & Bespoke Furnishings',
+                materials: 'Honed Limestone, Aged Brass, Silk Bouclé, Smoked Oak',
+                year: '2025',
+                layoutClass: 'md:col-span-7',
+                aspectClass: 'aspect-[4/3]',
+                narrative: 'A sensitive restoration of a five-storey Regency townhouse in Belgravia. Original cornicing was meticulously reinstated by master plasterers while introducing sweeping bronze-framed glazing and a tranquil palette of warm alabaster and raw silk.',
+                images: [
+                    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85',
+                    'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85',
+                    'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85'
+                ]
+            },
+            {
+                id: 'gstaad-chalet',
+                title: 'Chalet Lumière Alpine Sanctuary',
+                category: 'Alpine Chalets',
+                location: 'Gstaad, Switzerland',
+                scope: 'Turnkey Interior Design, Spa Architecture & Custom Joinery',
+                materials: 'Reclaimed Swiss Larch, Vals Quartzite, Cashmere, Shearling',
+                year: '2025',
+                layoutClass: 'md:col-span-5 md:mt-16',
+                aspectClass: 'aspect-[3/4]',
+                narrative: 'Perched above the Saanenland valley, Chalet Lumière balances rugged Alpine timber heritage with refined Parisian tailoring. Hand-brushed larch walls frame panoramic mountain vistas alongside a subterranean quartzite hammam.',
+                images: [
+                    'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85',
+                    'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=85',
+                    'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85'
+                ]
+            },
+            {
+                id: 'cap-ferrat-villa',
+                title: 'Villa Soleil Levant',
+                category: 'Coastal Villas',
+                location: 'Saint-Jean-Cap-Ferrat, France',
+                scope: 'Full Spatial Reconfiguration, Outdoor Pavilions & Art Curation',
+                materials: 'Roman Travertine, Bleached Teak, Hand-troweled Lime Plaster',
+                year: '2024',
+                layoutClass: 'md:col-span-5',
+                aspectClass: 'aspect-[3/4]',
+                narrative: 'Inspired by mid-century Riviera modernism, this coastal estate dissolves the boundary between limestone terraces and the Mediterranean horizon using sun-washed travertine, woven linen drapery, and sculptural bronze accents.',
+                images: [
+                    'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1400&q=85',
+                    'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85',
+                    'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1400&q=85'
+                ]
+            },
+            {
+                id: 'atelier-collection',
+                title: 'The Solis Bespoke Collection',
+                category: 'Bespoke Furnishings',
+                location: 'Knightsbridge Atelier, London',
+                scope: 'Limited-Edition Furniture, Lighting & Hand-Knotted Rugs',
+                materials: 'Calacatta Viola Marble, Cast Bronze, Parchment, Tibetan Wool',
+                year: '2026',
+                layoutClass: 'md:col-span-7 md:mt-12',
+                aspectClass: 'aspect-[4/3]',
+                narrative: 'Designed in our London studio and crafted by third-generation European artisans, each piece in the Solis Collection celebrates tactile contrast—pairing monolithic hand-carved marble plinths with supple saddle leather and hammered bronze.',
+                images: [
+                    'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85',
+                    'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1400&q=85',
+                    'https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1400&q=85'
+                ]
+            }
+        ];
+
+        // ---------------------------------------------------------------------
+        // 2. SERVICES DATA
+        // ---------------------------------------------------------------------
+        const servicesData = [
+            {
+                tag: 'Spatial Masterplanning',
+                title: 'Interior Architecture',
+                desc: 'We reimagine floorplans, sightlines, classical mouldings, and bespoke lighting choreography. Working alongside heritage conservation officers and structural engineers, we elevate historic listed buildings and contemporary penthouses alike.',
+                img: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85',
+                deliverables: [
+                    'Listed Building & Heritage Restoration',
+                    'Custom Stone & Joinery Detailing',
+                    'Architectural Lighting Design',
+                    'Acoustic & Wellness Integration'
+                ]
+            },
+            {
+                tag: 'Artisanal Commissions',
+                title: 'Bespoke Furniture & Artisans',
+                desc: 'Every residence deserves pieces conceived exclusively for its proportions. We design one-of-a-kind dining tables, hand-tufted silk carpets, and sculptural alabaster chandeliers executed by master workshops in Britain, Italy, and France.',
+                img: 'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1400&q=85',
+                deliverables: [
+                    'Custom Cabinetry & Bronze Hardware',
+                    'Hand-Knotted Silk & Wool Carpets',
+                    'Bespoke Passementerie & Upholstery',
+                    'Artisanal Murano & Cast Glass Lighting'
+                ]
+            },
+            {
+                tag: 'Museum-Grade Provenance',
+                title: 'Art Curation & Styling',
+                desc: 'Guiding both seasoned collectors and first-time patrons, our art advisory curates contemporary paintings, antique antiquities, and site-specific sculptures that anchor the emotional narrative of each room.',
+                img: 'https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1400&q=85',
+                deliverables: [
+                    'Private Gallery & Auction Acquisition',
+                    'Site-Specific Sculptural Commissions',
+                    'Museum Framing & Conservation Lighting',
+                    'Rare Books, Objects & Tableware Styling'
+                ]
+            },
+            {
+                tag: 'White-Glove Execution',
+                title: 'Turnkey Project Management',
+                desc: 'From initial feasibility studies and international logistics to final white-glove installation, our dedicated project directors safeguard timelines, budgets, and uncompromising craftsmanship across continents.',
+                img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85',
+                deliverables: [
+                    'Single-Point Principal Stewardship',
+                    'Global Procurement & Customs Logistics',
+                    'On-Site Quality & Artisan Supervision',
+                    'Bespoke Home Maintenance Manuals'
+                ]
+            }
+        ];
+
+        // ---------------------------------------------------------------------
+        // 3. PRESS QUOTES DATA
+        // ---------------------------------------------------------------------
+        const pressQuotes = [
+            {
+                quote: '“Aurelia Sterling possesses an uncanny ability to infuse grand architectural volumes with intimate, soul-stirring warmth.”',
+                citation: '— Architectural Digest, AD100 Global Edition'
+            },
+            {
+                quote: '“A masterclass in quiet restraint: her London townhouses balance eighteenth-century proportion with effortless twenty-first-century comfort.”',
+                citation: '— House & Garden UK, Top 100 Interior Designers'
+            },
+            {
+                quote: '“From Gstaad to Cap-Ferrat, Sterling’s devotion to tactile stone, hand-rubbed bronze, and artisan textiles sets the gold standard.”',
+                citation: '— Elle Decor, The A-List Monograph'
+            },
+            {
+                quote: '“For discerning collectors seeking a residence that feels inherited rather than decorated, Aurelia Sterling remains the first call.”',
+                citation: '— Robb Report, Best of the Best Design'
+            }
+        ];
+
+        // ---------------------------------------------------------------------
+        // 4. RENDER PORTFOLIO & FILTERING
+        // ---------------------------------------------------------------------
+        const portfolioGrid = document.getElementById('portfolio-grid');
+
+        function renderPortfolio(filter = 'all') {
+            portfolioGrid.innerHTML = '';
+            const filtered = filter === 'all'
+                ? projects
+                : projects.filter(p => p.category === filter);
+
+            filtered.forEach((project, idx) => {
+                // Adjust column span when filtered so single items look balanced
+                const colClass = filter === 'all' ? project.layoutClass : 'md:col-span-6';
+                const aspectClass = filter === 'all' ? project.aspectClass : 'aspect-[4/3]';
+
+                const card = document.createElement('article');
+                card.className = `portfolio-card group cursor-pointer ${colClass}`;
+                card.onclick = () => openProjectModal(project.id);
+
+                card.innerHTML = `
+                    <div class="relative overflow-hidden rounded-sm bg-stone ${aspectClass} mb-5 shadow-sm">
+                        <img src="${project.images[0]}"
+                             alt="${project.title}"
+                             class="portfolio-img w-full h-full object-cover"
+                             onerror="this.src='https://placehold.co/1000x800/EBE6DE/1E1E1E?text=${encodeURIComponent(project.title)}'">
+                        <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/25 transition-colors duration-500 flex items-end p-6">
+                            <span class="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 bg-ivory/95 text-charcoal px-4 py-2 text-[11px] uppercase tracking-widest-xl rounded-sm shadow">
+                                View Residence
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4">
+                        <div>
+                            <span class="text-[11px] uppercase tracking-widest-xl text-champagne block mb-1">${project.category}</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-normal text-charcoal group-hover:text-champagne transition-colors">
+                                ${project.title}
+                            </h3>
+                        </div>
+                        <span class="text-xs font-light text-muted whitespace-nowrap">${project.location}</span>
+                    </div>
+                `;
+                portfolioGrid.appendChild(card);
+            });
+        }
+
+        // Filter Tab Click Handlers
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active', 'border-champagne', 'text-charcoal', 'font-medium');
+                    b.classList.add('border-transparent', 'text-muted');
+                });
+                btn.classList.add('active', 'border-champagne', 'text-charcoal', 'font-medium');
+                btn.classList.remove('border-transparent', 'text-muted');
+                renderPortfolio(btn.dataset.filter);
+            });
+        });
+
+        // Initial Render
+        renderPortfolio('all');
+
+        // ---------------------------------------------------------------------
+        // 5. PROJECT DETAIL MODAL LOGIC
+        // ---------------------------------------------------------------------
+        const modal = document.getElementById('project-modal');
+        const modalMainImg = document.getElementById('modal-main-img');
+        const modalThumbnails = document.getElementById('modal-thumbnails');
+
+        function openProjectModal(projectId) {
+            const project = projects.find(p => p.id === projectId);
+            if (!project) return;
+
+            document.getElementById('modal-category').textContent = project.category;
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-narrative').textContent = project.narrative;
+            document.getElementById('modal-location').textContent = project.location;
+            document.getElementById('modal-scope').textContent = project.scope;
+            document.getElementById('modal-materials').textContent = project.materials;
+            document.getElementById('modal-year').textContent = project.year;
+
+            modalMainImg.src = project.images[0];
+            modalMainImg.onerror = () => {
+                modalMainImg.src = `https://placehold.co/1000x750/EBE6DE/1E1E1E?text=${encodeURIComponent(project.title)}`;
+            };
+
+            // Build Thumbnails
+            modalThumbnails.innerHTML = '';
+            project.images.forEach((imgUrl, index) => {
+                const thumbBtn = document.createElement('button');
+                thumbBtn.className = `aspect-[4/3] overflow-hidden rounded-sm border-2 transition-all ${index === 0 ? 'border-champagne opacity-100' : 'border-transparent opacity-65 hover:opacity-100'}`;
+                thumbBtn.innerHTML = `<img src="${imgUrl}" alt="Thumbnail ${index + 1}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300/EBE6DE/1E1E1E?text=View+${index+1}'">`;
+                thumbBtn.onclick = () => {
+                    modalMainImg.style.opacity = '0.4';
+                    setTimeout(() => {
+                        modalMainImg.src = imgUrl;
+                        modalMainImg.style.opacity = '1';
+                    }, 150);
+                    modalThumbnails.querySelectorAll('button').forEach(b => {
+                        b.classList.remove('border-champagne', 'opacity-100');
+                        b.classList.add('border-transparent', 'opacity-65');
+                    });
+                    thumbBtn.classList.add('border-champagne', 'opacity-100');
+                    thumbBtn.classList.remove('border-transparent', 'opacity-65');
+                };
+                modalThumbnails.appendChild(thumbBtn);
+            });
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on backdrop click or Escape key
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeProjectModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeProjectModal();
+            }
+        });
+
+        // ---------------------------------------------------------------------
+        // 6. HERO ATMOSPHERE SWITCHER
+        // ---------------------------------------------------------------------
+        function setAtmosphere(mode) {
+            const dayLayer = document.getElementById('hero-day');
+            const eveningLayer = document.getElementById('hero-evening');
+            const btnDay = document.getElementById('btn-day');
+            const btnEvening = document.getElementById('btn-evening');
+
+            if (mode === 'day') {
+                dayLayer.classList.replace('opacity-0', 'opacity-100');
+                dayLayer.classList.replace('scale-105', 'scale-100');
+                eveningLayer.classList.replace('opacity-100', 'opacity-0');
+                eveningLayer.classList.replace('scale-100', 'scale-105');
+
+                btnDay.className = 'px-4 py-2 text-[11px] uppercase tracking-widest transition-all duration-300 bg-ivory text-charcoal font-medium rounded-sm';
+                btnEvening.className = 'px-4 py-2 text-[11px] uppercase tracking-widest transition-all duration-300 text-ivory/80 hover:text-ivory rounded-sm';
+            } else {
+                eveningLayer.classList.replace('opacity-0', 'opacity-100');
+                eveningLayer.classList.replace('scale-105', 'scale-100');
+                dayLayer.classList.replace('opacity-100', 'opacity-0');
+                dayLayer.classList.replace('scale-100', 'scale-105');
+
+                btnEvening.className = 'px-4 py-2 text-[11px] uppercase tracking-widest transition-all duration-300 bg-champagne text-ivory font-medium rounded-sm';
+                btnDay.className = 'px-4 py-2 text-[11px] uppercase tracking-widest transition-all duration-300 text-ivory/80 hover:text-ivory rounded-sm';
+            }
+        }
+
+        // ---------------------------------------------------------------------
+        // 7. BESPOKE SERVICES TABS SWITCHER
+        // ---------------------------------------------------------------------
+        function selectService(index) {
+            const tabs = document.querySelectorAll('.service-tab');
+            tabs.forEach((tab, i) => {
+                const arrow = tab.querySelector('span:last-child');
+                if (i === index) {
+                    tab.classList.add('active', 'bg-stone/50');
+                    tab.classList.remove('hover:bg-stone/30');
+                    arrow.classList.replace('text-muted', 'text-champagne');
+                } else {
+                    tab.classList.remove('active', 'bg-stone/50');
+                    tab.classList.add('hover:bg-stone/30');
+                    arrow.classList.replace('text-champagne', 'text-muted');
+                }
+            });
+
+            const data = servicesData[index];
+            const display = document.getElementById('service-display');
+            display.style.opacity = '0.35';
+
+            setTimeout(() => {
+                document.getElementById('service-img').src = data.img;
+                document.getElementById('service-tag').textContent = data.tag;
+                document.getElementById('service-title').textContent = data.title;
+                document.getElementById('service-desc').textContent = data.desc;
+
+                const list = document.getElementById('service-deliverables');
+                list.innerHTML = data.deliverables.map(item =>
+                    `<li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-champagne mr-2.5"></span>${item}</li>`
+                ).join('');
+
+                display.style.opacity = '1';
+            }, 200);
+        }
+
+        // ---------------------------------------------------------------------
+        // 8. PRESS & ACCOLADES SWITCHER
+        // ---------------------------------------------------------------------
+        function selectPress(index) {
+            const buttons = document.querySelectorAll('.press-btn');
+            buttons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.classList.replace('opacity-45', 'opacity-100');
+                } else {
+                    btn.classList.replace('opacity-100', 'opacity-45');
+                }
+            });
+
+            const quoteEl = document.getElementById('press-quote');
+            const citeEl = document.getElementById('press-citation');
+            quoteEl.style.opacity = '0';
+            setTimeout(() => {
+                quoteEl.textContent = pressQuotes[index].quote;
+                citeEl.textContent = pressQuotes[index].citation;
+                quoteEl.style.opacity = '1';
+            }, 220);
+        }
+
+        // ---------------------------------------------------------------------
+        // 9. STICKY HEADER TRANSITION & MOBILE MENU
+        // ---------------------------------------------------------------------
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                navbar.classList.add('bg-ivory/95', 'backdrop-blur-md', 'text-charcoal', 'shadow-sm', 'py-4');
+                navbar.classList.remove('py-6', 'text-ivory');
+            } else {
+                navbar.classList.remove('bg-ivory/95', 'backdrop-blur-md', 'text-charcoal', 'shadow-sm', 'py-4');
+                navbar.classList.add('py-6', 'text-ivory');
+            }
+        });
+
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            mobileDrawer.classList.remove('translate-x-full');
+        });
+        document.getElementById('close-drawer-btn').addEventListener('click', () => {
+            mobileDrawer.classList.add('translate-x-full');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileDrawer.classList.add('translate-x-full');
+            });
+        });
+
+        // ---------------------------------------------------------------------
+        // 10. CONSULTATION FORM & NEWSLETTER CONFIRMATIONS
+        // ---------------------------------------------------------------------
+        const inquiryForm = document.getElementById('inquiry-form');
+        const inquiryConfirmation = document.getElementById('inquiry-confirmation');
+
+        inquiryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('client-name').value.trim();
+            const location = document.getElementById('project-location').value.trim();
+
+            document.getElementById('confirmed-name').textContent = name || 'Guest';
+            document.getElementById('confirmed-location').textContent = location || 'your residence';
+
+            inquiryForm.classList.add('hidden');
+            inquiryConfirmation.classList.remove('hidden');
+        });
+
+        function resetInquiryForm() {
+            inquiryForm.reset();
+            inquiryConfirmation.classList.add('hidden');
+            inquiryForm.classList.remove('hidden');
+        }
+
+        document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('newsletter-email').value = '';
+            document.getElementById('newsletter-feedback').classList.remove('hidden');
+        });
+
+        // ---------------------------------------------------------------------
+        // 11. INTERSECTION OBSERVER FOR SUBTLE SCROLL REVEAL
+        // ---------------------------------------------------------------------
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>
