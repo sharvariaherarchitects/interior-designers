@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sharvari Aher — Architects &amp; Interior Designers | Mumbai &amp; Pune</title>
+  <title>Sharvari Aher — Architects & Interior Designers | Mumbai & Pune</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -605,6 +605,24 @@
       border-color: var(--crimson);
     }
 
+    .form-direct-email {
+      font-size: 0.84rem;
+      color: var(--ink-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .form-direct-email a {
+      color: var(--crimson);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(184, 41, 47, 0.35);
+    }
+
+    .form-direct-email a:hover {
+      color: var(--crimson-dark);
+      border-bottom-color: var(--crimson-dark);
+    }
+
     .form-status {
       font-size: 0.86rem;
       color: var(--crimson);
@@ -738,7 +756,7 @@
         </svg>
         <span class="brand-text-group">
           <span class="brand-name">Sharvari Aher</span>
-          <span class="brand-sub">Architects &amp; Interior Designers &bull; We make your dream spaces</span>
+          <span class="brand-sub">Architects & Interior Designers • We make your dream spaces</span>
         </span>
       </a>
 
@@ -749,7 +767,7 @@
         <a href="#inquire">Inquire</a>
       </nav>
 
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
 
@@ -759,7 +777,7 @@
       <div class="hero-scrim"></div>
       <div class="hero-inner">
         <div class="hero-copy">
-          <span class="eyebrow">MUMBAI &bull; PUNE</span>
+          <span class="eyebrow">MUMBAI • PUNE</span>
           <h1>Composed Spaces for Considered Living</h1>
           <p>Bespoke architecture and interior design shaped by natural light, calm proportion, and tactile materiality across Mumbai and Pune.</p>
           <div class="hero-actions">
@@ -777,7 +795,7 @@
             <circle cx="82" cy="99" r="10.5" stroke="#B8292F" stroke-width="6.5" fill="#FFFFFF"/>
           </svg>
           <div class="hero-logo-title">Sharvari Aher</div>
-          <div class="hero-logo-discipline">Architects &amp; Interior Designers</div>
+          <div class="hero-logo-discipline">Architects & Interior Designers</div>
           <div class="hero-logo-tagline">We make your dream spaces</div>
         </div>
       </div>
@@ -789,13 +807,13 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">SELECTED WORKS</span>
-            <h2>Residential &amp; Spatial Portfolio</h2>
+            <h2>Residential & Spatial Portfolio</h2>
           </div>
           <div class="filter-row" id="region-filters">
             <button class="filter-btn active" data-region="all">All</button>
             <button class="filter-btn" data-region="mumbai">Mumbai</button>
             <button class="filter-btn" data-region="pune">Pune</button>
-            <button class="filter-btn" data-region="retreats">Alibaug &amp; Retreats</button>
+            <button class="filter-btn" data-region="retreats">Alibaug & Retreats</button>
           </div>
         </div>
 
@@ -810,13 +828,13 @@
           <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80" alt="Architectural interior with warm stone and light" />
         </div>
         <div class="studio-copy">
-          <span class="eyebrow">STUDIO ETHOS &amp; LEADERSHIP</span>
+          <span class="eyebrow">STUDIO ETHOS & LEADERSHIP</span>
           <h2>Quiet Form, Enduring Craft</h2>
           <p>We approach each commission around daylight flow, clean spatial rhythm, and honest materials suited to coastal humidity in Mumbai and breezy plateaus in Pune.</p>
           <p>From initial schematic layouts to custom joinery and handover, every project is guided with clarity and care.</p>
 
           <div class="leadership-box">
-            <div class="leadership-role">Principal Architect &amp; Interior Designer</div>
+            <div class="leadership-role">Principal Architect & Interior Designer</div>
             <div class="leadership-name">Sharvari Aher</div>
             <div class="leadership-note">Leading residential architecture, interior spatial planning, and bespoke turnkey commissions across Mumbai and Pune.</div>
           </div>
@@ -837,7 +855,7 @@
         <div class="service-tabs" id="service-tabs">
           <button class="service-tab active" data-service="architecture">Architecture</button>
           <button class="service-tab" data-service="interiors">Interior Design</button>
-          <button class="service-tab" data-service="bespoke">Bespoke Joinery &amp; Styling</button>
+          <button class="service-tab" data-service="bespoke">Bespoke Joinery & Styling</button>
         </div>
 
         <div class="service-panel" id="service-panel"></div>
@@ -847,9 +865,9 @@
     <!-- Press & Ethos Switcher -->
     <section class="section" id="press">
       <div class="container press-box">
-        <span class="eyebrow">PRESS &amp; DESIGN ETHOS</span>
+        <span class="eyebrow">PRESS & DESIGN ETHOS</span>
         <blockquote class="press-quote" id="press-quote">
-          &ldquo;Thoughtful proportions, calm light, and spaces tailored around how people truly live.&rdquo;
+          “Thoughtful proportions, calm light, and spaces tailored around how people truly live.”
         </blockquote>
         <div class="press-buttons" id="press-buttons">
           <button class="press-btn active" data-index="0">Design Ethos</button>
@@ -869,38 +887,39 @@
 
           <div class="city-note">
             <span class="eyebrow" style="margin-bottom: 0.25rem;">MUMBAI</span>
-            <h3>South Mumbai &amp; Western Suburbs</h3>
-            <p>Appointments &amp; site visits by arrangement &bull; studio@sharvariaher-placeholder.in</p>
+            <h3>South Mumbai & Western Suburbs</h3>
+            <p>Appointments & site visits by arrangement • studio@sharvariaher-placeholder.in</p>
           </div>
 
           <div class="city-note">
             <span class="eyebrow" style="margin-bottom: 0.25rem;">PUNE</span>
-            <h3>Koregaon Park &amp; Central Pune</h3>
-            <p>Design consultations &amp; material reviews &bull; +91 20 0000 0000</p>
+            <h3>Koregaon Park & Central Pune</h3>
+            <p>Design consultations & material reviews • +91 20 0000 0000</p>
           </div>
         </div>
 
         <form class="inquiry-form" id="inquiry-form">
           <div class="form-row">
-            <input type="text" id="client-name" placeholder="Your Name" required />
-            <input type="email" id="client-email" placeholder="Email Address" required />
+            <input type="text" id="client-name" name="name" placeholder="Your Name" required />
+            <input type="email" id="client-email" name="email" placeholder="Email Address" required />
           </div>
           <div class="form-row">
-            <select id="client-city" required>
+            <select id="client-city" name="city" required>
               <option value="">Select City / Region</option>
               <option value="Mumbai">Mumbai</option>
               <option value="Pune">Pune</option>
-              <option value="Alibaug & Retreats">Alibaug &amp; Retreats</option>
+              <option value="Alibaug & Retreats">Alibaug & Retreats</option>
             </select>
-            <select id="client-scope" required>
+            <select id="client-scope" name="scope" required>
               <option value="">Project Scope</option>
               <option value="Architecture">Architecture</option>
               <option value="Interior Design">Interior Design</option>
-              <option value="Turnkey & Bespoke">Turnkey &amp; Bespoke</option>
+              <option value="Turnkey & Bespoke">Turnkey & Bespoke</option>
             </select>
           </div>
-          <textarea id="client-message" rows="4" placeholder="Tell us about your residence, approximate area, and timeline..." required></textarea>
+          <textarea id="client-message" name="message" rows="4" placeholder="Tell us about your residence, approximate area, and timeline..." required></textarea>
           <button type="submit" class="btn btn-crimson">Send Inquiry</button>
+          <p class="form-direct-email">Or email directly at <a href="mailto:studio@sharvariaher-placeholder.in">studio@sharvariaher-placeholder.in</a></p>
           <p class="form-status" id="form-status"></p>
         </form>
       </div>
@@ -909,15 +928,15 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div><strong>Sharvari Aher</strong> &mdash; Architects &amp; Interior Designers &bull; We make your dream spaces</div>
-      <div>Mumbai &amp; Pune &bull; Placeholder portfolio content</div>
+      <div><strong>Sharvari Aher</strong> — Architects & Interior Designers • We make your dream spaces</div>
+      <div>Mumbai & Pune • Placeholder portfolio content</div>
     </div>
   </footer>
 
   <!-- Case-Study Modal -->
   <div class="modal-backdrop" id="case-modal" aria-hidden="true">
     <div class="modal-panel">
-      <button class="modal-close" id="modal-close" aria-label="Close case study">&times;</button>
+      <button class="modal-close" id="modal-close" aria-label="Close case study">×</button>
       <div id="modal-content"></div>
     </div>
   </div>
@@ -1031,7 +1050,7 @@
             <img src="${project.images[0]}" alt="${project.title}" loading="lazy" />
           </div>
           <div class="project-info">
-            <div class="project-meta">${project.city} &bull; ${project.typology}</div>
+            <div class="project-meta">${project.city} • ${project.typology}</div>
             <h3 class="project-title">${project.title}</h3>
             <p class="project-summary">${project.summary}</p>
           </div>
@@ -1048,7 +1067,7 @@
       if (!project) return;
 
       modalContent.innerHTML = `
-        <span class="eyebrow">${project.city} &bull; ${project.typology} &bull; ${project.area}</span>
+        <span class="eyebrow">${project.city} • ${project.typology} • ${project.area}</span>
         <h2 style="font-size: 2.1rem; margin-bottom: 0.75rem;">${project.title}</h2>
         <p style="color: var(--ink-secondary); margin-bottom: 0.75rem;">${project.summary}</p>
         <p style="color: var(--ink-secondary);">${project.details}</p>
@@ -1128,12 +1147,65 @@
       });
     });
 
-    document.getElementById("inquiry-form").addEventListener("submit", (e) => {
+    const STUDIO_EMAIL = "sharvariaherarchitects@gmail.com";
+    // Paste your Formspree endpoint URL below, e.g.:
+    // const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrpqjdpq";
+
+    document.getElementById("inquiry-form").addEventListener("submit", async (e) => {
       e.preventDefault();
       const name = document.getElementById("client-name").value.trim();
-      const city = document.getElementById("client-city").value;
-      document.getElementById("form-status").textContent =
-        `Thank you, ${name}. Your ${city || "Mumbai / Pune"} inquiry has been noted for Sharvari Aher — Architects & Interior Designers.`;
+      const email = document.getElementById("client-email").value.trim();
+      const city = document.getElementById("client-city").value || "Mumbai / Pune";
+      const scope = document.getElementById("client-scope").value || "General Inquiry";
+      const message = document.getElementById("client-message").value.trim();
+      const statusEl = document.getElementById("form-status");
+
+      const subject = `New Inquiry (${city} - ${scope}) from ${name}`;
+      const bodyLines = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `City / Region: ${city}`,
+        `Project Scope: ${scope}`,
+        ``,
+        `Project Details:`,
+        message
+      ].join("\\n");
+
+      if (FORMSPREE_ENDPOINT) {
+        statusEl.textContent = "Sending your inquiry...";
+        try {
+          const response = await fetch(FORMSPREE_ENDPOINT, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              city,
+              scope,
+              message,
+              _subject: subject
+            })
+          });
+
+          if (response.ok) {
+            statusEl.textContent = `Thank you, ${name}. Your inquiry has been sent to ${STUDIO_EMAIL}.`;
+            e.target.reset();
+          } else {
+            statusEl.textContent = `Could not send automatically. Please email ${STUDIO_EMAIL} directly.`;
+          }
+        } catch (err) {
+          statusEl.textContent = `Network error. Please email ${STUDIO_EMAIL} directly.`;
+        }
+        return;
+      }
+
+      const mailtoUrl = `mailto:${encodeURIComponent(STUDIO_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines)}`;
+      statusEl.textContent = `Opening your email app addressed to ${STUDIO_EMAIL} with your inquiry pre-filled...`;
+      window.location.href = mailtoUrl;
       e.target.reset();
     });
 
@@ -1142,3 +1214,16 @@
   </script>
 </body>
 </html>
+"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+# Basic structural check
+assert "<!DOCTYPE html>" in html_content
+assert "</html>" in html_content
+assert "- {\n      box-sizing: border-box;" not in html_content
+assert "* {\n      box-sizing: border-box;" in html_content
+assert 'name="name"' in html_content and 'name="email"' in html_content and 'name="city"' in html_content and 'name="scope"' in html_content and 'name="message"' in html_content
+assert "FORMSPREE_ENDPOINT" in html_content
+print("Verified complete index.html structure.")
